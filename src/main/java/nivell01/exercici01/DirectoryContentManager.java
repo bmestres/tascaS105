@@ -3,12 +3,7 @@ package nivell01.exercici01;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.io.FileReader;
-import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class DirectoryContentManager {
 
