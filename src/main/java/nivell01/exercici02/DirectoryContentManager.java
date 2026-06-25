@@ -20,10 +20,10 @@ import java.util.Arrays;
                         System.out.printf("\t");
                     }
                     if (elemFile.isDirectory()) {
-                        System.out.printf("[%s]\n", elemFile.getName());
+                        System.out.printf("(D) %s\n", elemFile.getName());
                         listDirectoryTreeInOrder_rec(elemFile.getAbsolutePath(), level + 1);
                     } else {
-                        System.out.printf("%s\n", elemFile.getName());
+                        System.out.printf("(F) %s\n", elemFile.getName());
                     }
                 }
             }
