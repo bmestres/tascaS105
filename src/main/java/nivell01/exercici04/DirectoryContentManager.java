@@ -23,7 +23,6 @@ public class DirectoryContentManager {
         }
     }
 
-
     public static void writeDirectoryTreeInOrder(String dirPath, String textFileName){
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter(textFileName));
