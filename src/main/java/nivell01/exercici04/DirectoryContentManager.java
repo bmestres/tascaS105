@@ -1,9 +1,28 @@
-package nivell01.exercici03;
+package nivell01.exercici04;
 
 import java.io.*;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class DirectoryContentManager {
+
+    public static void readAndShowTxt(String filePath){
+        Scanner scanner = null;
+        try{
+            scanner = new Scanner(new BufferedReader(new FileReader(filePath)));
+
+            while(scanner.hasNext()){
+                System.out.println(scanner.next());
+            }
+        }catch(FileNotFoundException e){
+            System.out.println("Error reading file");
+        }finally{
+            if(scanner != null){
+                scanner.close();
+            }
+        }
+    }
+
 
     public static void writeDirectoryTreeInOrder(String dirPath, String textFileName){
         try{
