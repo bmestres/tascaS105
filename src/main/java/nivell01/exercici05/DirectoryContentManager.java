@@ -7,23 +7,31 @@ import java.util.Scanner;
 
 public class DirectoryContentManager {
 
-    public static void orderSerialize(String fileName){
+    public static void objectSerialize(String fileName, Object object){
 
+        ObjectOutputStream objectToBinary = null;
         try{
-            Order order = new Order();
-
             FileOutputStream fileWriter = new FileOutputStream(fileName);
-            ObjectOutputStream objectoBinary = new ObjectOutputStream(fileWriter);
+            objectToBinary = new ObjectOutputStream(fileWriter);
 
-            objectoBinary.writeObject(order);
+            objectToBinary.writeObject(object);
             System.out.println("Success");
 
-            objectoBinary.close();
+            objectToBinary.close();
             fileWriter.close();
         }catch(FileNotFoundException e){
-            System.out.println("Unable to write the file");
+            System.out.println("Unable to find the file path");
         }catch(IOException e){
             System.out.println("Unable to write the file");
+        } finally {
+            if(objectToBinary != null){
+                try{
+                    objectToBinary.close();
+                }catch(IOException e){
+                    System.out.println("Unable to close file");
+                }
+
+            }
         }
     }
 
