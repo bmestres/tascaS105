@@ -6,14 +6,18 @@ public class Order implements Serializable {
     private int num;
     private String idClient;
     private double totalAmount;
-    private Product[] line;
     private boolean isProcessed;
 
     public Order(){
         this.num = -1;
         this.idClient = "";
         this.totalAmount = -1;
-        this.line = null;
         isProcessed = false;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Order info:\nNum: %d\nClient ID: %s\nTotal amount: %.1f\nProcessed: %b ",
+                this.num, this.idClient, this.totalAmount, this.isProcessed);
     }
 }
