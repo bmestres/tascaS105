@@ -2,10 +2,31 @@ package nivell01.exercici05;
 
 import java.io.*;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.Scanner;
 
 public class DirectoryContentManager {
+
+    public static Object objectDeserialize(String fileName){
+
+        ObjectInputStream binaryToObject = null;
+
+        try{
+            FileInputStream fileReader = new FileInputStream(fileName);
+            binaryToObject = new ObjectInputStream(fileReader);
+
+            Object object = binaryToObject.readObject();
+
+            return object;
+
+        }catch(FileNotFoundException e){
+            System.out.println("Could not find file");
+        }catch(IOException e){
+            System.out.println("Could not read object from file");
+        }catch(ClassNotFoundException e){
+            System.out.println("Could not read object");
+        }
+        return null;
+    }
 
     public static void objectSerialize(String fileName, Object object){
 
@@ -17,8 +38,6 @@ public class DirectoryContentManager {
             objectToBinary.writeObject(object);
             System.out.println("Success");
 
-            objectToBinary.close();
-            fileWriter.close();
         }catch(FileNotFoundException e){
             System.out.println("Unable to find the file path");
         }catch(IOException e){
