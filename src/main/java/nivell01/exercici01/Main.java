@@ -3,6 +3,6 @@ package nivell01.exercici01;
 public class Main {
 
     public static void main(String[] args) {
-        DirectoryContentManager.listInOrder("/Users/bernat/IdeaProjects/tascaS105");
+        DirectoryContentManager.listInOrder(".");
     }
 }

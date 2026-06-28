@@ -8,7 +8,6 @@ import java.util.Arrays;
 public class DirectoryContentManager {
 
     public static void listInOrder(String path){
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         File file = new File(path);
 
