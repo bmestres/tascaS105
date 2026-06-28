@@ -387,6 +387,7 @@
 	(F) vcs.xml
 	(F) workspace.xml
 (D) .mvn
+(F) directoriesTree.txt
 (F) directory_tree.txt
 (F) order.ser
 (F) pom.xml

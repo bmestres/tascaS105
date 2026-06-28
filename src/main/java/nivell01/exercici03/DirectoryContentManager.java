@@ -10,7 +10,7 @@ public class DirectoryContentManager {
             BufferedWriter writer = new BufferedWriter(new FileWriter(textFileName));
             listDirectoryTreeInOrder_rec(dirPath, 0, writer);
             writer.close();
-        }catch( java.io.IOException e){
+        }catch(IOException e){
             System.out.println("Error writing file");
         }
     }
@@ -51,7 +51,6 @@ public class DirectoryContentManager {
     }
 
     public static void listInOrder(String path){
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         File file = new File(path);
 
