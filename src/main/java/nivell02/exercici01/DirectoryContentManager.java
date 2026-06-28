@@ -17,7 +17,6 @@ public class DirectoryContentManager {
         Properties catalogProps = new Properties();
 
         try{
-
             FileInputStream fis01 = new FileInputStream(appConfigPath);
             appProps.load(fis01);
             fis01.close();
@@ -27,6 +26,7 @@ public class DirectoryContentManager {
             fis02.close();
 
             String outputFileName = appProps.getProperty("outputFile");
+            String outputDir = appProps.getProperty(("outputDir"));
             String dir = catalogProps.getProperty("c1");
 
             writeDirectoryTreeInOrder(dir, outputFileName);

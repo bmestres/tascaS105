@@ -6,6 +6,5 @@ public class Main {
         DirectoryContentManager.objectSerialize("order.ser", new Order());
         Order deserializedOrder = (Order)DirectoryContentManager.objectDeserialize("order.ser");
         System.out.println(deserializedOrder);
-
     }
 }
