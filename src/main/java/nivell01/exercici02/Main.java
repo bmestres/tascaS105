@@ -4,6 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        DirectoryContentManager.listDirectoryTreeInOrder_rec("/Users/bernat/IdeaProjects/tascaS105", 0);
+        DirectoryContentManager.listDirectoryTreeInOrder_rec(".", 0);
     }
 }

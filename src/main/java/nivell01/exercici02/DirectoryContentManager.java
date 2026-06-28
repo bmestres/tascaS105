@@ -8,7 +8,6 @@ import java.util.Arrays;
     public class DirectoryContentManager {
 
         public static void listDirectoryTreeInOrder_rec(String dirPath, int level) {
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
             File dir = new File(dirPath);
             File[] firstLevelFiles = dir.listFiles();
@@ -30,7 +29,6 @@ import java.util.Arrays;
         }
 
         public static void listInOrder(String path){
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
             File file = new File(path);
 
