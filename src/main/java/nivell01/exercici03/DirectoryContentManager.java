@@ -49,4 +49,21 @@ public class DirectoryContentManager {
             }
         }
     }
+
+    public static void listInOrder(String path){
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        File file = new File(path);
+
+        if(file.isDirectory()){
+            String arr[] = file.list();
+            Arrays.sort(arr);
+
+            int n = arr.length;
+
+            for(int i = 0; i < n; i++){
+                System.out.format("%s\n", arr[i]);
+            }
+        }
+    }
 }
