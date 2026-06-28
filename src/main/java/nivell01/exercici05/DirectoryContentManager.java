@@ -8,15 +8,11 @@ public class DirectoryContentManager {
 
     public static Object objectDeserialize(String fileName){
 
-        ObjectInputStream binaryToObject = null;
-
         try{
             FileInputStream fileReader = new FileInputStream(fileName);
-            binaryToObject = new ObjectInputStream(fileReader);
+            ObjectInputStream binaryToObject = new ObjectInputStream(fileReader);
 
-            Object object = binaryToObject.readObject();
-
-            return object;
+            return binaryToObject.readObject();
 
         }catch(FileNotFoundException e){
             System.out.println("Could not find file");
@@ -117,18 +113,20 @@ public class DirectoryContentManager {
     }
 
     public static void listInOrder(String path){
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         File file = new File(path);
 
         if(file.isDirectory()){
-            String arr[] = file.list();
-            Arrays.sort(arr);
+            String[]arr = file.list();
 
-            int n = arr.length;
+            if(arr != null){
+                Arrays.sort(arr);
 
-            for(int i = 0; i < n; i++){
-                System.out.format("%s\n", arr[i]);
+                for(String elem : arr){
+                    System.out.format("%s\n", elem);
+                }
+            } else {
+                System.out.println("Error accessing file");
             }
         }
     }

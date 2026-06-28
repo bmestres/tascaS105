@@ -55,13 +55,16 @@ public class DirectoryContentManager {
         File file = new File(path);
 
         if(file.isDirectory()){
-            String arr[] = file.list();
-            Arrays.sort(arr);
+            String[]arr = file.list();
 
-            int n = arr.length;
+            if(arr != null){
+                Arrays.sort(arr);
 
-            for(int i = 0; i < n; i++){
-                System.out.format("%s\n", arr[i]);
+                for(String elem : arr){
+                    System.out.format("%s\n", elem);
+                }
+            } else {
+                System.out.println("Error accessing file");
             }
         }
     }
