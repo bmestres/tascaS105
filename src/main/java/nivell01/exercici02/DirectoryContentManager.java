@@ -1,8 +1,5 @@
 package nivell01.exercici02;
-
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 
     public class DirectoryContentManager {
@@ -16,7 +13,7 @@ import java.util.Arrays;
                 Arrays.sort(firstLevelFiles);
                 for (File elemFile : firstLevelFiles) {
                     for (int i = 0; i < level; i++) {
-                        System.out.printf("\t");
+                        System.out.print("\t");
                     }
                     if (elemFile.isDirectory()) {
                         System.out.printf("(D) %s\n", elemFile.getName());
@@ -33,13 +30,16 @@ import java.util.Arrays;
             File file = new File(path);
 
             if(file.isDirectory()){
-                String arr[] = file.list();
-                Arrays.sort(arr);
+                String[]arr = file.list();
 
-                int n = arr.length;
+                if(arr != null){
+                    Arrays.sort(arr);
 
-                for(int i = 0; i < n; i++){
-                    System.out.format("%s\n", arr[i]);
+                    for(String elem : arr){
+                        System.out.format("%s\n", elem);
+                    }
+                } else {
+                    System.out.println("Error accessing file");
                 }
             }
         }
