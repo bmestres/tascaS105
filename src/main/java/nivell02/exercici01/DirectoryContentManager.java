@@ -29,7 +29,9 @@ public class DirectoryContentManager {
             String outputDir = appProps.getProperty(("outputDir"));
             String dir = catalogProps.getProperty("c1");
 
-            writeDirectoryTreeInOrder(dir, outputFileName);
+            String outputPath = String.format("%s%s%s", outputDir, File.separator, outputFileName);
+
+            writeDirectoryTreeInOrder(dir, outputPath);
 
         }catch(IOException e){
             System.out.println("Unable to read the file");
